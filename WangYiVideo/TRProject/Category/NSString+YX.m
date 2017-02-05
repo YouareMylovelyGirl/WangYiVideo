@@ -15,17 +15,10 @@
 }
 
 - (NSString *)yx_dateFormat{
-    //类似于 1483916400 值, 一般都是时间戳.  时间戳是指 当前时间距离1970年的秒数. 单位有可能是毫秒 或者 秒. 进位是1000
+
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.doubleValue];
-    //    NSLog(@"%@", date);
-    // 2017/01/12 23:11:02
+
     NSDateFormatter *formatter = [NSDateFormatter new];
-    //输入格式化的格式 y年 M月 d日 h 12进制的小时 H 24进制的小时
-    //m 分  s秒
-    /*
-     formatter.dateFormat = @"yyyy/MM/dd HH:mm:ss";
-     return [formatter stringFromDate:date];
-     */
     //获取当前日历
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     //把格林威治时间 转为 北京时间
